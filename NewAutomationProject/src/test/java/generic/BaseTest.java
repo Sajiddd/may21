@@ -23,7 +23,7 @@ public class BaseTest implements InterfaceConstantVariables {
 	
 	@Parameters({"hubUrl","browserName"})
 	@BeforeMethod
-	public void openApp(String hubUrl,String browser) throws MalformedURLException
+	public void openApp(String hubUrl,String browser) throws MalformedURLException, InterruptedException
 	{
 //		//selenium grid integration. to run our test script on Remote Computer for Compatibility testing.
 //		URL url = new URL(hubUrl);
@@ -35,6 +35,7 @@ public class BaseTest implements InterfaceConstantVariables {
 		WebDriverManager.chromedriver().setup();
 		//open the browser
 		driver=new ChromeDriver();
+		Thread.sleep(10000);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(ITO));
 		wait=new WebDriverWait(driver, Duration.ofSeconds(ETO));
