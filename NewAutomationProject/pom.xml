@@ -11,7 +11,7 @@
         <version>3.5.5</version>
         <configuration>
           <suiteXmlFiles>
-             <suiteXmlFile>testng4.xml</suiteXmlFile>
+             <suiteXmlFile>testng.xml</suiteXmlFile>
           </suiteXmlFiles>
         </configuration>
       </plugin>
