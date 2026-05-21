@@ -35,7 +35,6 @@ public class BaseTest implements InterfaceConstantVariables {
 		WebDriverManager.chromedriver().setup();
 		//open the browser
 		driver=new ChromeDriver();
-		Thread.sleep(10000);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(ITO));
 		wait=new WebDriverWait(driver, Duration.ofSeconds(ETO));
