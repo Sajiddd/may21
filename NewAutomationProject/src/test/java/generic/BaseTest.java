@@ -25,16 +25,16 @@ public class BaseTest implements InterfaceConstantVariables {
 	@BeforeMethod
 	public void openApp(String hubUrl,String browser) throws MalformedURLException
 	{
-//		//set the path of the driver executable file
-//		WebDriverManager.chromedriver().setup();
-//		//open the browser
-//		driver=new ChromeDriver();
+//		//selenium grid integration. to run our test script on Remote Computer for Compatibility testing.
+//		URL url = new URL(hubUrl);
+//		DesiredCapabilities dc=new DesiredCapabilities();
+//		dc.setBrowserName(browser);
+//		driver=new RemoteWebDriver(url,dc);
 		
-		//selenium grid integration. to run our test script on Remote Computer for Compatibility testing.
-		URL url = new URL(hubUrl);
-		DesiredCapabilities dc=new DesiredCapabilities();
-		dc.setBrowserName(browser);
-		driver=new RemoteWebDriver(url,dc);
+		//set the path of the driver executable file
+		WebDriverManager.chromedriver().setup();
+		//open the browser
+		driver=new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(ITO));
 		wait=new WebDriverWait(driver, Duration.ofSeconds(ETO));
